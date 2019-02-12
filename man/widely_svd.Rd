@@ -5,9 +5,9 @@
 \alias{widely_svd_}
 \title{Turn into a wide matrix, perform SVD, return to tidy form}
 \usage{
-widely_svd(tbl, item, feature, value, nv = NULL, ...)
+widely_svd(tbl, item, feature, value, nv = NULL, weight_d = FALSE, ...)
 
-widely_svd_(tbl, item, feature, value, nv = NULL, ...)
+widely_svd_(tbl, item, feature, value, nv = NULL, weight_d = FALSE, ...)
 }
 \arguments{
 \item{tbl}{Table}
@@ -20,6 +20,8 @@ widely_svd_(tbl, item, feature, value, nv = NULL, ...)
 
 \item{nv}{Optional; the number of principal components to estimate. Recommended for matrices
 with many features.}
+
+\item{weight_d}{Whether to multiply each value by the \code{d} principal component.}
 
 \item{...}{Extra arguments passed to \code{svd} (if \code{nv} is \code{NULL})
 or \code{irlba} (if \code{nv} is given)}
